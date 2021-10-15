@@ -1,12 +1,14 @@
 // import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from './features/viewReducer'
+import { RootState } from './store'
 
 import './App.css';
 
 function App() {
     const dispatch = useDispatch()
-    const view = useSelector(state => state.view)
+    const view = useSelector((state: RootState) => state.view)
+
 
     const handleShowProducts = () => dispatch(actions.showProducts())
     const handleShowCart = () => dispatch(actions.showCart())
@@ -22,6 +24,8 @@ function App() {
         </header>
         <main>
             Visa antingen product view eller cart view.
+
+            Vald vy: {view}
         </main>
         </div>
     );

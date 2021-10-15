@@ -9,4 +9,7 @@ const store = configureStore({
     reducer: rootReducer
 })
 
+export type RootState = ReturnType<typeof store.getState>
+/* State/store ser ut så här: { products, cart, user, view } */
+
 export { store }
