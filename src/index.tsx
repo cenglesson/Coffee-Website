@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { configureStore } from '@reduxjs/toolkit'
-import { rootReducer } from './features/rootReducer'
+import { store } from './store'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = configureStore({
-    reducer: rootReducer
-})
 
+// Lägg till Provider runt App-komponenten
+// Den ger alla komponenter tillgång till Redux Store
 ReactDOM.render(
     <React.StrictMode>
     <Provider store={store}>
