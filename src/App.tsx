@@ -1,7 +1,9 @@
 // import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { actions } from './features/viewReducer'
+import { actions, PRODUCTVIEW, CARTVIEW } from './features/viewReducer'
 import { RootState } from './store'
+import ProductGrid from './components/ProductGrid'
+import CartView from './components/CartView'
 
 import './App.css';
 
@@ -14,6 +16,14 @@ function App() {
     const handleShowProducts = () => dispatch(actions.showProducts())
     const handleShowCart = () => dispatch(actions.showCart())
 
+    let main = null
+    if( view === PRODUCTVIEW ) {
+        main = <ProductGrid />
+    }
+    else if( view === CARTVIEW ) {
+        main = <CartView />
+    }
+
     return (
         <div className="App">
         <header>
@@ -24,7 +34,7 @@ function App() {
             </nav>
         </header>
         <main>
-            Visa antingen product view eller cart view.
+            {main}
             <br/>
             Vald vy: {view}
             <br/>

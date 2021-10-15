@@ -1,5 +1,6 @@
 import { createAction, createReducer } from '@reduxjs/toolkit'
 
+// Tips! Lägg konstanter i en egen fil, och exportera dem.
 const PRODUCTVIEW = 'product view', CARTVIEW = 'cart view'
 
 // Dessa actions finns - detta är vad användaren kan göra
@@ -18,4 +19,4 @@ const viewReducer = createReducer(initialState, {
 	[showCart.toString()]: () => CARTVIEW
 })
 
-export { actions, viewReducer }
+export { actions, viewReducer, PRODUCTVIEW, CARTVIEW }
