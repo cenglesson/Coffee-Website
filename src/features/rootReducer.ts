@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
 import { viewReducer } from './viewReducer'
+import { cartReducer } from './cartReducer'
+import { productsReducer } from './productsReducer'
 
 const rootReducer = combineReducers({
-	view: viewReducer
+	view: viewReducer,
+	cart: cartReducer,
+	products: productsReducer
 	// här lägger vi till reducers, allt eftesom vi behöver dem (precis som vi gör med komponenter)
 })
 

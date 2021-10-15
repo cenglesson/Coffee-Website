@@ -8,6 +8,7 @@ import './App.css';
 function App() {
     const dispatch = useDispatch()
     const view = useSelector((state: RootState) => state.view)
+    const cart = useSelector((state: RootState) => state.cart)
 
 
     const handleShowProducts = () => dispatch(actions.showProducts())
@@ -24,8 +25,10 @@ function App() {
         </header>
         <main>
             Visa antingen product view eller cart view.
-
+            <br/>
             Vald vy: {view}
+            <br/>
+            Cart has {cart.length} items.
         </main>
         </div>
     );
