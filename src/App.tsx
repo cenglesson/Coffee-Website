@@ -17,29 +17,29 @@ function App() {
     const handleShowCart = () => dispatch(actions.showCart())
 
     let main = null
-    if( view === PRODUCTVIEW ) {
+    if (view === PRODUCTVIEW) {
         main = <ProductGrid />
     }
-    else if( view === CARTVIEW ) {
+    else if (view === CARTVIEW) {
         main = <CartView />
     }
 
     return (
         <div className="App">
-        <header>
-            <h1> Wireframe webshop </h1>
-            <nav>
-                <button onClick={handleShowProducts}> Show products </button>
-                <button onClick={handleShowCart}> Show cart </button>
-            </nav>
-        </header>
-        <main>
-            {main}
-            <br/>
-            Vald vy: {view}
-            <br/>
-            Cart has {cart.length} items.
-        </main>
+            <header>
+                <h1> Coffee Shop </h1>
+                <nav>
+                    <button onClick={handleShowProducts}> Show products </button>
+                    <button onClick={handleShowCart}> Show cart </button>
+                </nav>
+            </header>
+            <main>
+                {main}
+                <br />
+                Vald vy: {view}
+                <br />
+                Cart has {cart.length} items.
+            </main>
         </div>
     );
 }

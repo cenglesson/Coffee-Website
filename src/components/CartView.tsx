@@ -7,7 +7,7 @@ const CartView = () => {
 	const cart = useSelector((state: RootState) => state.cart)
 
 	let countMessage = 'The cart is empty'
-	if( cart.length > 0 ) {
+	if (cart.length > 0) {
 		countMessage = `You have ${cart.length} items in the cart.`
 	}
 
@@ -26,7 +26,7 @@ const CartView = () => {
 				{cart.map(item => (
 					<div key={item.product.name}>
 						{item.product.name} ..... {item.count} ...... {item.product.price * item.count}
-						<button onClick={() => handleRemove(item.product.name)}> 🗑️ </button>
+						<button className="trashCan" onClick={() => handleRemove(item.product.name)}> 🗑️ </button>
 					</div>
 				))}
 			</div>
