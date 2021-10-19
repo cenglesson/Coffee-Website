@@ -11,9 +11,9 @@ import reportWebVitals from './reportWebVitals';
 // Den ger alla komponenter tillgång till Redux Store
 ReactDOM.render(
     <React.StrictMode>
-    <Provider store={store}>
-    <App />
-    </Provider>
+        <Provider store={store}>
+            <App />
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );
