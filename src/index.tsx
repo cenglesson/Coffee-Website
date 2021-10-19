@@ -5,15 +5,19 @@ import { store } from './store'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom'
+
 
 
 // Lägg till Provider runt App-komponenten
 // Den ger alla komponenter tillgång till Redux Store
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
+        <Router>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </Router>
     </React.StrictMode>,
     document.getElementById('root')
 );
