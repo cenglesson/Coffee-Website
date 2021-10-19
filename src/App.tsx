@@ -6,15 +6,13 @@ import ProductGrid from './components/ProductGrid'
 import CartView from './components/CartView'
 
 import './App.css';
+import { Link, Route, Switch } from 'react-router-dom'
+import Home from './components/HomeView'
 
 function App() {
-    const dispatch = useDispatch()
+
     const view = useSelector((state: RootState) => state.view)
     const cart = useSelector((state: RootState) => state.cart)
-
-
-    const handleShowProducts = () => dispatch(actions.showProducts())
-    const handleShowCart = () => dispatch(actions.showCart())
 
     let main = null
     if (view === PRODUCTVIEW) {
@@ -24,23 +22,34 @@ function App() {
         main = <CartView />
     }
 
+
+
     return (
         <div className="App">
             <header>
                 <h1> Coffee Shop </h1>
                 <nav>
-                    <button onClick={handleShowProducts}> Show products </button>
-                    <button onClick={handleShowCart}> Show cart </button>
+                    <Link to="/" className="Button-Nav" > Home 🏠 </Link>
+                    <Link to="/products" className="Button-Nav" > Products 📦</Link>
+                    <Link to="/cart" className="Button-Nav" > Cart  🛒 </Link>
                 </nav>
             </header>
             <main>
-                {main}
-                <br />
-                Vald vy: {view}
-                <br />
-                Cart has {cart.length} items.
+                <Switch>
+                    <Route exact path="/home">
+                        <Home />
+                    </Route>
+
+                    <Route exact path="/products">
+                        <ProductGrid />
+                    </Route>
+
+                    <Route exact path="/cart">
+                        <CartView />
+                    </Route>
+                </Switch>
             </main>
-        </div>
+        </div >
     );
 }
 
