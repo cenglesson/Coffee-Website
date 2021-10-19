@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../store'
 import { actions } from '../features/cartReducer'
 
+
 const CartView = () => {
 	const dispatch = useDispatch()
 	const cart = useSelector((state: RootState) => state.cart)
@@ -19,6 +20,7 @@ const CartView = () => {
 		sum += item.count * item.product.price
 	})
 
+
 	return (
 		<div className="cart">
 			<h2> {countMessage} </h2>
@@ -26,7 +28,7 @@ const CartView = () => {
 				{cart.map(item => (
 					<div key={item.product.name}>
 						{item.product.name} ..... {item.count} ...... {item.product.price * item.count}
-						<button className="trashCan" onClick={() => handleRemove(item.product.name)}> 🗑️ </button>
+						<button className="trashCan" onClick={() => handleRemove(item.product.name)}> 🗑️ {cart.length} st</button>
 					</div>
 				))}
 			</div>

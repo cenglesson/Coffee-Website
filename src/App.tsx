@@ -11,16 +11,7 @@ import Nav from './components/NavView'
 
 function App() {
 
-    const view = useSelector((state: RootState) => state.view)
-    const cart = useSelector((state: RootState) => state.cart)
 
-    let main = null
-    if (view === PRODUCTVIEW) {
-        main = <ProductGrid />
-    }
-    else if (view === CARTVIEW) {
-        main = <CartView />
-    }
 
 
 
