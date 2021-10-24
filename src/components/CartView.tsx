@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../store'
 import { actions } from '../features/cartReducer'
+import Nav from './NavView'
 
 
 const CartView = () => {
@@ -23,6 +24,8 @@ const CartView = () => {
 
 	return (
 		<div className="cart">
+			<Nav />
+
 			<h2> {countMessage} </h2>
 			<div className="items">
 				{cart.map(item => (
@@ -32,7 +35,9 @@ const CartView = () => {
 					</div>
 				))}
 			</div>
-			Total sum: {sum} SEK.
+			<div className="sumCart">
+				Total sum: {sum} SEK.
+			</div>
 		</div>
 	)
 }

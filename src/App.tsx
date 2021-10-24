@@ -1,36 +1,30 @@
 // import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { actions, PRODUCTVIEW, CARTVIEW } from './features/viewReducer'
-import { RootState } from './store'
 import ProductGrid from './components/ProductGrid'
 import CartView from './components/CartView'
 import './App.css';
-import { Link, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Home from './components/HomeView'
-import Nav from './components/NavView'
+import LoadingPage from './components/LoadingPage'
 
 function App() {
-
-
-
-
 
     return (
         <div className="App">
             <main>
                 <Switch>
-
                     <Route exact path="/">
+                        <LoadingPage />
+                    </Route>
+
+                    <Route path="/home">
                         <Home />
                     </Route>
 
-                    <Route exact path="/products">
-                        <Nav />
+                    <Route path="/products">
                         <ProductGrid />
                     </Route>
 
-                    <Route exact path="/cart">
-                        <Nav />
+                    <Route path="/cart">
                         <CartView />
                     </Route>
                 </Switch>

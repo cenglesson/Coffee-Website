@@ -16,7 +16,7 @@ const Nav = () => {
                 <h1> Coffee Shop </h1>
             </header>
             <div className="Nav">
-                <Link to="/" className="Button-Nav" > Home 🏠 </Link>
+                <Link to="/home" className="Button-Nav" > Home 🏠 </Link>
                 <Link to="/products" className="Button-Nav" > Products 📦</Link>
                 <Link to="/cart" className="Button-Nav" >Cart 🛒 </Link>
                 <div className="Button-Amount">{cart.length}</div>

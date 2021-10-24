@@ -6,10 +6,15 @@ import { NavLink } from 'react-router-dom';
 
 const Home = () => {
     return (
+
         <NavLink
+            className="home-title"
             to="/products"
             exact
         >
+
+
+            <h1> If you want some Coffee, just tap !</h1>
 
             <div className="container">
                 <div className="coffee-header">

@@ -5,6 +5,7 @@ import { Product } from '../models/Product'
 import '../App.css';
 import { CARTVIEW, PRODUCTVIEW } from '../features/viewReducer';
 import CartView from './CartView';
+import Nav from './NavView';
 
 const ProductGrid = () => {
 	const dispatch = useDispatch()
@@ -25,7 +26,9 @@ const ProductGrid = () => {
 
 	return (
 		<div>
+			<Nav />
 			<div className="cards">
+
 				{products.map(p => (
 					<div key={p.name} className=".">
 						<div className="card">

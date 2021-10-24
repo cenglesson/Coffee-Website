@@ -9,9 +9,16 @@ body, html {
   align-items: center;   
   font-family: 'Permanent Marker', cursive;
   overflow: hidden;
-
 }
 
+body.loaded {
+  overflow-y: auto;
+}
+
+.home-title  {
+  text-decoration: none;
+  color: white;
+}
 
 .img-container { 
   position: relative; 
@@ -71,9 +78,18 @@ body, html {
   padding-bottom: 2em;
 }
 
+
+
+.cart {
+}
+
 .viewLengthCart {
   text-align: center;
 }
+
+.sumCart {
+}
+
 
 .Nav {
   display: flex;
@@ -225,7 +241,7 @@ body, html {
 /*---------------COFFEE-ANIMATION------------------_*/
 
 .container {
-    margin-top: 12em;
+    margin-top: 8em;
     width: 300px;
     height: 280px;
     position: absolute;
@@ -412,7 +428,7 @@ body, html {
     top: 50px;
     left: calc(50% - 3px);
     background-color: #74372b;
-    animation: liquid 4s 4s linear infinite;
+    animation: liquid 2s 3s linear infinite;
 }
 
 .coffee-medium__smoke {
